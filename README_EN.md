@@ -4,6 +4,8 @@
 
 <h1 align="center">Antigravity-Proxy</h1>
 
+Optional: [Windows repair launcher](docs/launcher.md) restores missing proxy files before starting the app, then exits without a resident process. Keep the complete IDE release package outside the application installation directory.
+
 <p align="center">
   <b>🚀 Built for the Antigravity editor: use proxy without TUN mode (especially useful in China)</b>
 </p>
