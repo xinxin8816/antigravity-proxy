@@ -687,6 +687,12 @@ if (Test-Path $configWebSrc) {
 # 完成
 # ============================================================
 
+# Optional IDE launcher lives outside ide/ so manual DLL deployment stays unchanged.
+& (Join-Path $PSScriptRoot "scripts\build-launcher.ps1") -OutputDir $OutputDir
+if ($RunTests) {
+    & (Join-Path $PSScriptRoot "scripts\test-launcher.ps1")
+}
+
 Write-Header "编译完成!"
 Write-Host ""
 Write-Host "输出目录: $OutputDir" -ForegroundColor Green

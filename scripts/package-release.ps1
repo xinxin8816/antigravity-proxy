@@ -32,7 +32,10 @@ $requiredFiles = @(
     "cli\antigravity_proxy.dll",
     "cli\config.json",
     "config-web.html",
-    "使用说明.md"
+    "使用说明.md",
+    "AntigravityProxyLauncher.exe",
+    "version.dll.sha256",
+    "launcher.md"
 )
 foreach ($relativePath in $requiredFiles) {
     $path = Join-Path $OutputDir $relativePath
@@ -69,6 +72,12 @@ try {
             -Destination (Join-Path $productStage $product) -Recurse -Force
         Copy-Item -LiteralPath (Join-Path $OutputDir "config-web.html") -Destination $productStage -Force
         Copy-Item -LiteralPath (Join-Path $OutputDir "使用说明.md") -Destination $productStage -Force
+
+        if ($product -eq "ide") {
+            foreach ($file in @("AntigravityProxyLauncher.exe", "version.dll.sha256", "launcher.md")) {
+                Copy-Item -LiteralPath (Join-Path $OutputDir $file) -Destination $productStage -Force
+            }
+        }
 
         $zipPath = if ($product -eq "ide") { $ideZip } else { $cliZip }
         Compress-Archive -Path (Join-Path $productStage "*") -DestinationPath $zipPath -Force

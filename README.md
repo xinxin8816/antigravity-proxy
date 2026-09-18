@@ -4,6 +4,8 @@
 
 <h1 align="center">Antigravity-Proxy</h1>
 
+可选：[Windows 启动时修复工具](docs/launcher.md) — 更新后自动补回缺失的代理文件，启动应用后立即退出，无后台常驻。请将完整 IDE 发布包保存在应用安装目录之外。
+
 <p align="center">
   <b>🚀 专为 Antigravity 编辑器打造：在中国也能无需 TUN 模式稳定走代理</b>
 </p>

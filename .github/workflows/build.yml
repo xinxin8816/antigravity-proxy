@@ -53,6 +53,9 @@ jobs:
         name: antigravity-proxy-v${{ env.BUILD_VERSION }}-ide-win-${{ matrix.arch }}
         path: |
           output/ide/**
+          output/AntigravityProxyLauncher.exe
+          output/version.dll.sha256
+          output/launcher.md
           output/config-web.html
           output/使用说明.md
         if-no-files-found: error
