@@ -104,7 +104,6 @@ namespace Network {
             request << "\r\n";
             
             std::string requestStr = request.str();
-            auto& config = Core::Config::Instance();
             const int recvTimeout = NormalizeTimeoutMs(config.timeout.recv_ms);
             const int sendTimeout = NormalizeTimeoutMs(config.timeout.send_ms);
             if (handshakeBudgetMs <= 0) {
